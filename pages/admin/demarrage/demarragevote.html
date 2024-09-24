@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>DigiVote - Enrôlement</title>
+    <link rel="stylesheet" href="demarragevote.css" />
+    <script src="demarragevote.js"></script>
+</head>
+<body>
+    <header>
+        <h1>DigiVote</h1>
+    </header>
+    <div class="container">
+        <div class="left-section">
+            <div class="image-container">
+                <img src="../../../assets/images/vote1.png" alt="Vote" />
+            </div>
+        </div>
+        <div class="right-section">
+            <div id="demarrageVote" class="tabcontent">
+                <h2 style="margin-left: 10%">Démarrage du Vote</h2>
+                <form id="formulaireVote">
+                    <label class="type" for="type-vote">Type de vote <span class="required"></label>
+                    <select name="type-vote" id="vote-select">
+                        <option value="">--Veuillez choisir une option--</option>
+                    </select>
+                    <label for="dateDebut">Date de Début</label>
+                    <input type="date" id="dateDebut" name="dateDebut" required />
+                    <label for="heureDebut">Heure de Début</label>
+                    <input type="time" id="heureDebut" name="heureDebut" required />
+                    <label for="heureFin">Heure de Fin</label>
+                    <input type="time" id="heureFin" name="heureFin" required />
+                    <button type="button" id="demarrerVoteBtn" onclick="demarrerVote()">
+                        Démarrer le Vote
+                    </button>
+                    <button type="button" id="arreterVoteBtn" onclick="arreterVote()">
+                        Arrêter le Vote
+                    </button>
+                </form>
+                <div id="chrono">00:00:00</div>
+                <div id="finVote"></div>
+                <div id="messageBox" class="message-box"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Fetch election types from the server
+        fetch('fetch_elections.php')
+            .then(response => response.json())
+            .then(data => {
+                const voteSelect = document.getElementById('vote-select');
+                data.forEach(election => {
+                    const option = document.createElement('option');
+                    option.value = election.id;
+                    option.textContent = election.nom;
+                    voteSelect.appendChild(option);
+                });
+            })
+            .catch(error => console.error('Error fetching election types:', error));
+    </script>
+</body>
+</html>

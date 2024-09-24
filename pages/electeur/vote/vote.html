@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>DigiVote</title>
+    <link rel="stylesheet" href="vote.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>DigiVote</h1>
+    </header>
+    <div class="main-container">
+        <div class="voting-container">
+            <h2 style="margin-top: -1px;">Votez pour votre option préférée</h2>
+            <form id="voteForm">
+                <div>
+                    <label style="margin-top: 3px;">Votre numéro d'identité</label>
+                    <input type="text" id="numero" name="numero" required>
+                    <span id="identityMessage" style="color: red; display: none;">Numéro d'identité invalide.</span>
+                    <button id="generateCodeButton" disabled>Générer votre numéro jeton</button>
+                    <p id="uniqueCodeDisplay"></p>
+                </div>
+                <fieldset id="optionsFieldset" disabled>
+                    <label class="option-label" style="margin-bottom: 10px;">
+                        <input type="radio" name="option" value="Option 1" required>
+                        <i class="fas fa-user option-icon"></i> Option 1
+                    </label>
+                    <label class="option-label" style="margin-bottom: 10px;">
+                        <input type="radio" name="option" value="Option 2">
+                        <i class="fas fa-user option-icon"></i> Option 2
+                    </label>
+                    <label class="option-label">
+                        <input type="radio" name="option" value="Option 3">
+                        <i class="fas fa-user option-icon"></i> Option 3
+                    </label>
+                </fieldset>
+                <button type="submit" disabled>Voter</button>
+            </form>
+        </div>
+        <div id="resultsContainer">
+            <canvas id="resultsChart"></canvas>
+            <div class="additional-info">
+            </div>
+        </div>
+    </div>
+    <script src="vote.js"></script>
+</body>
+</html>

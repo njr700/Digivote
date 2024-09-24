@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DigiVote - Navigation</title>
+    <link rel="stylesheet" href="menu_admin.css" />
+  </head>
+  <body>
+    <header>
+      <h1>DigiVote</h1>
+    </header>
+    <div class="container">
+      <div class="left-section">
+        <div class="image-container">
+          <img src="../../assets/images/vote1.png" alt="Vote" />
+        </div>
+      </div>
+      <div class="right-section">
+        <div id="navigation" class="tabcontent">
+          <h2 style="text-align: center">Menu Administrateur</h2>
+          <button onclick="window.location.href='creation/creation_vote.html'">
+            Créer un vote
+          </button>
+          <button onclick="window.location.href='demarrage/demarragevote.html'">
+            Démarrer un vote
+          </button>
+          <button
+            onclick="window.location.href='../../pages/staff/liste/liste_candidat.php'"
+          >
+            Liste des Candidats
+          </button>
+          <button
+            onclick="window.location.href='../../pages/staff/liste/liste_electeur.php'"
+          >
+            Liste des Electeurs
+          </button>
+          <button onclick="window.location.href='../../index.html'">
+            Se déconnecter
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiVote - Modifier Mot de Passe</title>
+    <link rel="stylesheet" href="modifier_mdp.css" />
+</head>
+<body>
+    <header>
+        <h1>DigiVote</h1>
+    </header>
+	<div class="container">
+        <div class="left-section">
+            <div class="image-container">
+                <img src="../../../assets/images/vote1.png" alt="Vote" />
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="login-container">
+                <h2>Modifier votre mot de passe</h2>
+                <form id="loginForm" method="POST" action="modifier_mdp.php">
+                <input type="text" id="uniqueCode" name="uniqueCode" placeholder="Numéro ID" required>
+                <input type="password" id="defaultPassword" name="defaultPassword" placeholder="Entrez votre mot de passe par défaut" required>
+                <input type="password" id="newPassword" name="newPassword" placeholder="Entrez votre nouveau mot de passe">
+                
+                <button type="submit">Modifier</button>
+                <div id="messageBox" class="message-box" style="display: none"></div>
+                <div id="errorBox" class="message-box error-box" style="display: none"></div>
+            </form>
+        </div>
+    </div>
+    <script src="modifier_mdp.js"></script>
+</body> 
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>DigiVote - Connexion</title>
+    <link rel="stylesheet" href="login.css" />
+</head>
+<body>
+    <header>
+        <h1>DigiVote</h1>
+    </header>
+    <div class="container">
+        <div class="left-section">
+            <div class="image-container">
+                <img src="assets/images/vote1.png" alt="Vote" />
+            </div>
+        </div>
+        <div class="right-section">
+            <div class="login-container">
+                <h2>Connexion</h2>
+                <form id="loginForm" method="POST" action="login.php">
+                    <input type="text" id="uniqueCode" placeholder="Numéro ID" name="uniqueCode" required />
+                    <input type="password" id="password" placeholder="Mot de passe" name="password" required />
+                    <button type="submit">Se connecter</button>
+                    <div id="messageBox" class="message-box" style="display: none"></div>
+                    <div id="errorBox" class="message-box error-box" style="display: none"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

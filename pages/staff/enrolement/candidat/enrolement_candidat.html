@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>DigiVote - Enrôlement</title>
+    <link rel="stylesheet" href="enrolement_candidat.css" />
+</head>
+<body>
+<header>
+    <h1>DigiVote</h1>
+</header>
+<div class="container">
+    <div class="left-section">
+        <div class="image-container">
+            <img src="../../../../assets/images/vote1.png" alt="Vote" />
+        </div>
+    </div>
+    <div class="right-section">
+        <form id="enrolmentForm" class="enrolment-container" method="POST" action="enrolement_candidat.php" enctype="multipart/form-data">
+            <h1>Enrôlement Candidats</h1>
+            <label for="firstName">Prénom </label>
+            <input type="text" id="firstName" name="firstName" required />
+            <label for="lastName">Nom de famille </label>
+            <input type="text" id="lastName" name="lastName" required />
+            <label for="postnom">Postnom </label>
+            <input type="text" id="postnom" name="postnom" required />
+            <label for="Adress">Adresse </label>
+            <input type="text" id="Address" name="Address" required />
+            <label for="uniqueCode">Numéro d'identité </label>
+            <div class="uniqueCode">
+                <input type="text" id="uniqueCode" name="uniqueCode" readonly />
+                <button type="button" id="generateButton" onclick="generateUniqueCode()">Générer</button>
+				
+            </div>
+			<label for="defaultPassword">Mot de passe par défaut </label>
+            <input type="text" id="defaultPassword" name="defaultPassword" required />
+
+            <label for="poste">poste</label>
+            <select id="poste" name="poste">
+                <option value="tresorier">Trésorier</option>
+                <option value="presidence">Présidence</option>
+                <option value="vice-presidence">Vice-Présidence</option>
+                <option value="vice-presidence">Sécrétaire</option>
+            </select>
+            <input type="file" id="profilePicture" name="profilePicture" accept="image/*" style="display:none;" onchange="previewProfilePicture(event)" />
+            <div class="picture-container">
+                <img id="profilePicturePreview"/>
+                <div class="camera-icon"></div>
+            </div>
+			
+            <button type="submit">Enregistrer</button>
+            <div id="messageBox" class="message-box" style="display: none"></div>
+            <div id="errorBox" class="message-box error-box" style="display: none"></div>
+        </form>
+    </div>
+</div>
+<script src="enrolement_candidat.js"></script>
+</body>
+</html>
